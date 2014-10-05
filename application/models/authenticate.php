@@ -28,8 +28,10 @@ class Authenticate extends CI_Model {
 			redirect('main/home');
 
 		}else{
+			redirect('auth');
+
 			$this->session->sess_destroy();
-			redirect('main/log_err');
+			
 		}
 	}
 
