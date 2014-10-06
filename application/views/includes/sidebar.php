@@ -27,8 +27,13 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="index.html">
+                            <a href="<?php echo base_url(); ?>index.php/main/home">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="<?php echo base_url(); ?>index.php/main/create_po">
+                                <i class="fa fa-bar-chart-o"></i> <span>Create Purchase Order</span>
                             </a>
                         </li>
                         <li class="treeview">

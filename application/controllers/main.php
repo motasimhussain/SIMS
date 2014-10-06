@@ -23,6 +23,10 @@ class Main extends CI_Controller {
 		$data['main_content'] = 'home';
 		$this->load->view('includes/template',$data);
 	}
+	public function create_po(){
+		$data['main_content'] = 'create_po';
+		$this->load->view('includes/template',$data);
+	}
 
 }
 
