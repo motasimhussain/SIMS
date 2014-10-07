@@ -17,108 +17,117 @@
 
         <div class="box box-info">
             <div class="box-body">
-            <form class="form-horizontal">
+            <a class="btn btn-danger btn-flat btn-custom" href="">Back</a>
+            <a class="btn btn-primary btn-flat btn-custom pull-right" href="">New</a>
+            <form class="form-horizontal text-center">
                 <fieldset>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="po_det">PO Detail#:</label>
-                            <div class="col-md-7">
-                                <input type="text" class="form-control" id="po_det" name="po_det">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="textinput">Date:</label>
-                            <div class="col-md-7" >
-                                <input id="pickdate" name="date" readonly="" class="form-control input-md" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                        <label class="col-md-3 control-label" for="cmp_name">Customer:</label>
-                            <div class="col-md-7">
-                                <select id="cmp_name" name="cmp_name" class="form-control">
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                        <label class="col-md-3 control-label" for="supplier">Supplier:</label>
-                            <div class="col-md-7">
-                                <select id="supplier" name="supplier" class="form-control">
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                        <label class="col-md-3 control-label" for="item">Item:</label>
-                            <div class="col-md-7">
-                                <select id="item" name="item" class="form-control">
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                        <label class="col-md-3 control-label" for="unit">Unit:</label>
-                            <div class="col-md-7">
-                                <select id="unit" name="unit" class="form-control">
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="qty">Quantity:</label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="qty" name="qty">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="u_price">Unit Price:</label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="u_price" name="u_price">
-                            </div>
-                        </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        
+                        
                     </div>
                     
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <div class="form-group">
-                            <label class="col-md-3 control-label" for="t_price">Total Amount:</label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="t_price" name="t_price">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="supp_po">PO#:</label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="supp_po" name="supp_po">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="lnd_cost">Landed Cost:</label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="lnd_cost" name="lnd_cost">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="grn">GRN:</label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="grn" name="grn">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="dc_num">Delivery Challan#:</label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="dc_num" name="dc_num">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="bill_num">Bill#:</label>
-                            <div class="col-md-7">
-                                <input class="form-control" id="bill_num" name="bill_num">
+                            <label class="control-label" for="po_det">PO Detail#:</label>
+                            <div class="">
+                                <input type="text" class="form-control text-center" id="po_det" name="po_det">
                             </div>
                         </div>
                     </div>
 
-                    
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        
+                    </div>
                 </fieldset>
+                <fieldset>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label" for="po_det">PO#:</label>
+                            <div class="">
+                                <input type="text" class="form-control text-center" id="po_in_num" name="po_det">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pull-right">
+                        <div class="form-group">
+                            <label class=" control-label" for="textinput">Date:</label>
+                            <div class="" >
+                                <input id="pickdate" name="date" readonly="" class="form-control text-center" type="text" value="">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="form-group">
+                            <label class="control-label" for="cmp_name">Customer:</label>
+                            <div class="">
+                                <select id="cmp_name" name="cmp_name" class="form-control text-center">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <table class="table table-responsive table-bordered table-condensed text-center">
+                    <thead>
+                        <tr>
+                            <th>S/No.</th>
+                            <th>Item Description</th>
+                            <th>Unit</th>
+                            <th>Qty</th>
+                            <th>U/Price</th>
+                            <th>TTL/Amount</th>
+                            <th>Supplier</th>
+                            <th>PO#</th>
+                            <th>LC</th>
+                            <th>GRN</th>
+                            <th>DC#</th>
+                            <th>Bill#</th>
+                            <th>Add/Edit</th>
+                            <th>Del</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>ola siniorita</td>
+                            <td>kg</td>
+                            <td>3</td>
+                            <td>1000</td>
+                            <td>3000</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a href="#" class="glyphicon glyphicon-pencil"></a></td>
+                            <td><a href="#" class="glyphicon glyphicon-remove"></a></td>
+                        </tr>
+                        <tr>
+                            <td><p>2</p></td>
+                            <td class="col-md-2"><select id="supplier" name="supplier" class="form-control"></select></td>
+                            <td class=""><select id="unit" name="unit" class="form-control"></select></td>
+                            <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
+                            <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
+                            <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
+                            <td class="col-md-2"><select id="supplier" name="supplier" class="form-control"></select></td>
+                            <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
+                            <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
+                            <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
+                            <td class=""><a href="">Create</a></td>
+                            <td class=""><a href="">Create</a></td>
+                            <td class=""><a href="#" class="glyphicon glyphicon-plus"></a></td>
+                            <td class=""><a href="#" class="glyphicon glyphicon-remove"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <fieldset>
                     <div class="form-group">
                         <div class="col-md-12 text-center">
-                            <button class="btn btn-flat btn-success">Submit</button>
+                            <button class="btn btn-flat btn-success btn-custom">Submit</button>
                         </div>
                     </div>
                 </fieldset>

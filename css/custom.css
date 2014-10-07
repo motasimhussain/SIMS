@@ -1,0 +1,8 @@
+.btn-custom{
+    width: 100px !important;
+}
+
+.table-custom>thead>tr>th, .table-custom>tbody>tr>th, .table-custom>tfoot>tr>th, .table-custom>thead>tr>td, .table-custom>tbody>tr>td, .table-custom>tfoot>tr>td {
+	padding-left: 2px;
+	padding-right: 2px;
+}
