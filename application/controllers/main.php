@@ -2,11 +2,17 @@
 
 class Main extends CI_Controller {
 
+	public $data = array();
+
 	public function __construct()
 	{
 		parent::__construct();
 		//Do your magic here
-		$data = array();
+		
+		$this->data['dash'] = "";
+		$this->data['c_po'] = "";
+		$this->data['acc'] = "";
+
 		$logged_in = $this->session->userdata('isLoggedIn');
 		if($logged_in){
 
@@ -15,17 +21,20 @@ class Main extends CI_Controller {
 		}
 	}
 
-	public function index()
-	{
-		
-	}
 	public function home(){
-		$data['main_content'] = 'home';
-		$this->load->view('includes/template',$data);
+		$this->data['main_content'] = 'home';
+		$this->data['dash'] = 'active';
+		$this->load->view('includes/template',$this->data);
 	}
 	public function create_po(){
-		$data['main_content'] = 'create_po';
-		$this->load->view('includes/template',$data);
+		$this->data['main_content'] = 'create_po';
+		$this->data['c_po'] = 'active';
+		$this->load->view('includes/template',$this->data);
+	}
+	public function add_customer(){
+		$this->data['main_content'] = 'add_customer';
+		$this->data['acc'] = 'active';
+		$this->load->view('includes/template',$this->data);
 	}
 
 }

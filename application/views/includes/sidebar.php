@@ -26,26 +26,25 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="active">
+                        <li class="<?php echo $dash; ?>">
                             <a href="<?php echo base_url(); ?>index.php/main/home">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="active">
+                        <li class="<?php echo $c_po; ?>">
                             <a href="<?php echo base_url(); ?>index.php/main/create_po">
                                 <i class="fa fa-bar-chart-o"></i> <span>Create Purchase Order</span>
                             </a>
                         </li>
-                        <li class="treeview">
+                        <li class="treeview <?php echo $acc; ?>">
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
-                                <span>Charts</span>
+                                <span>Accounts</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/main/add_customer"><i class="fa fa-angle-double-right"></i> Add Customer</a></li>
+                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Add Supplier</a></li>
                             </ul>
                         </li>
                     </ul>

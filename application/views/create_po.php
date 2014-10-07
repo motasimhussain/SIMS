@@ -100,8 +100,8 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><a href="">004354</a></td>
+                            <td><a href="">099474</a></td>
                             <td><a href="#" class="glyphicon glyphicon-pencil"></a></td>
                             <td><a href="#" class="glyphicon glyphicon-remove"></a></td>
                         </tr>
