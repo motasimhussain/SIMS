@@ -18,6 +18,7 @@
         <link href="<?php echo base_url(); ?>css/AdminLTE.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>css/custom.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/print.css" media="print">
  
     </head>
     <body class="skin-blue">

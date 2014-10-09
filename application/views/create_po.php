@@ -62,13 +62,19 @@
                         <div class="form-group">
                             <label class="control-label" for="cmp_name">Customer:</label>
                             <div class="">
+                                <?php foreach($cust_list as $row): ?>
                                 <select id="cmp_name" name="cmp_name" class="form-control text-center">
+                                    <option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
                                 </select>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
                 </fieldset>
                 
+                <fieldset>
+                <div class="col-md-12">
+                <div class="form-group">
                 <table class="table table-responsive table-bordered table-condensed text-center">
                     <thead>
                         <tr>
@@ -108,11 +114,27 @@
                         <tr>
                             <td><p>2</p></td>
                             <td class="col-md-2"><select id="supplier" name="supplier" class="form-control"></select></td>
-                            <td class=""><select id="unit" name="unit" class="form-control"></select></td>
+                            <td class="" width="80px">
+                                <select id="unit" name="unit" class="form-control">
+                                    <option>PC</option>
+                                    <option>KG</option>
+                                    <option>LT</option>
+                                    <option>GM</option>
+                                    <option>MG</option>
+                                    <option>ML</option>
+                                    <option>TN</option>
+                                </select>
+                            </td>
                             <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
                             <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
                             <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
-                            <td class="col-md-2"><select id="supplier" name="supplier" class="form-control"></select></td>
+                            <td class="col-md-2">
+                                <select id="supplier" name="supplier" class="form-control">
+                                    <?php foreach($supp_list as $row): ?>
+                                    <option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
                             <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
                             <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
                             <td class=""><input type="text" class="form-control" id="po_det" name="po_det"></td>
@@ -123,11 +145,14 @@
                         </tr>
                     </tbody>
                 </table>
-
+                </div>
+                </div>
+                </fieldset>
                 <fieldset>
                     <div class="form-group">
                         <div class="col-md-12 text-center">
                             <button class="btn btn-flat btn-success btn-custom">Submit</button>
+                            <a class="btn btn-default btn-flat btn-custom pull-right" href=""><span class="glyphicon glyphicon-print"></span> Print</a>
                         </div>
                     </div>
                 </fieldset>

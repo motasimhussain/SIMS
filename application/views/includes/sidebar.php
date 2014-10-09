@@ -44,7 +44,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url(); ?>index.php/main/add_customer"><i class="fa fa-angle-double-right"></i> Add Customer</a></li>
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Add Supplier</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/main/add_supplier"><i class="fa fa-angle-double-right"></i> Add Supplier</a></li>
                             </ul>
                         </li>
                     </ul>

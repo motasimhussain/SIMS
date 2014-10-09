@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Add Customer
-            <small>Add Customer</small>
+            Add Supplier
+            <small>Add Supplier</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -16,7 +16,7 @@
         <div class="box box-info">
             <div class="box-body">
 
-                <form class="text-center form-horizontal" method="POST" action="<?php echo base_url(); ?>index.php/validator/add_customer">
+                <form class="text-center form-horizontal" method="POST" action="<?php echo base_url(); ?>index.php/validator/add_supplier">
                     <fieldset>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="name">Company Name</label>  
@@ -75,9 +75,9 @@
                         <div class="form-group">
                             <button class="btn btn-success btn-flat btn-custom" type="submit">Submit</button>
                         </div>
-                            
                     </fieldset>
                 </form>
+
                 <?php if(isset($err)): ?>
                 <div class="row text-center ">
                     <div class="col-md-4 col-md-offset-4">
