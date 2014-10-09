@@ -25,18 +25,12 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <h2 class="page-header">
-                                <i class="fa fa-globe"></i> AdminLTE, Inc.
-                                <small class="pull-right">Date: 2/10/2014</small>
+                                <i class="fa fa-globe"></i> SAAD TRADERS 
+                                <small class="pull-right">Address Goes Here</small>
                             </h2>
                         </div><!-- /.col -->
                     </div>
-                    <!-- info row -->
-                    <div class="row ">
-                        <div class="text-center">
-                           <h2>SAAD TRADERS <small>Address Goes Here</small></h3>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-
+                    
                     <div class="row  text-center">
                         <div class="col-xs-6 ">
                            <h3>PO#: 4545465454</h3>
@@ -49,7 +43,7 @@
                     <!-- Table row -->
                     <div class="row text-center">
                         <h4 class="inline">Customer's Name: </h4>
-                        <h3 class="inline">UNILIVER - FCL - 09</h3>
+                        <h3 class="inline">UNILEVER - FCL - 09</h3>
 
                     </div><!-- /.row -->
 

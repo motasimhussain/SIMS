@@ -10,7 +10,12 @@ class Validator extends CI_Controller {
 		$this->data['dash'] = "";
 		$this->data['c_po'] = "";
 		$this->data['acc'] = "";
+		$this->data['stock'] = "";
 		
+		
+	}
+
+	public function val_rules(){
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('prefix', 'Prefix', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
@@ -22,9 +27,15 @@ class Validator extends CI_Controller {
 		$this->form_validation->set_rules('term', 'Term', 'integer');
 	}
 
-
+	public function stock_val(){
+		$this->form_validation->set_rules('item_name', 'Item Name', 'required');
+		//$this->form_validation->set_rules('item_code', 'Item Code', '');
+		$this->form_validation->set_rules('qty', 'Quantity', 'required');
+		$this->form_validation->set_rules('price', 'Price', 'numeric|required');
+	}
 
 	public function add_customer(){
+		$this->val_rules();
 
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -46,8 +57,31 @@ class Validator extends CI_Controller {
 		
 	}
 
-	public function add_supplier(){
+	public function add_stock(){
 
+		$this->stock_val();
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->data['main_content'] = 'stock';
+			$this->data['stock'] = 'active';
+			$this->data['err'] = 1;
+			$this->load->view('includes/template',$this->data);
+		}
+		else
+		{
+			$this->load->model('stock');
+			if($this->stock->add()){
+				redirect('main/stock');
+			}else{
+				echo "<h1>Oops Something went wrong</h1>";
+			}
+		}
+
+		
+	}
+
+	public function add_supplier(){
+		$this->val_rules();
 		if ($this->form_validation->run() == FALSE)
 		{
 			$this->data['main_content'] = 'add_supplier';

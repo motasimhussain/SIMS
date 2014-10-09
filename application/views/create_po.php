@@ -97,7 +97,7 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>ola siniorita</td>
+                            <td>item goes here</td>
                             <td>kg</td>
                             <td>3</td>
                             <td>1000</td>
@@ -152,7 +152,7 @@
                     <div class="form-group">
                         <div class="col-md-12 text-center">
                             <button class="btn btn-flat btn-success btn-custom">Submit</button>
-                            <a class="btn btn-default btn-flat btn-custom pull-right" href=""><span class="glyphicon glyphicon-print"></span> Print</a>
+                            <a class="btn btn-default btn-flat btn-custom pull-right" href="<?php echo base_url(); ?>index.php/main/print_po"><span class="glyphicon glyphicon-print"></span> Print</a>
                         </div>
                     </div>
                 </fieldset>

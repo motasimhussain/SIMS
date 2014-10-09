@@ -12,6 +12,7 @@ class Main extends CI_Controller {
 		$this->data['dash'] = "";
 		$this->data['c_po'] = "";
 		$this->data['acc'] = "";
+		$this->data['stock'] = "";
 
 		
 		$logged_in = $this->session->userdata('isLoggedIn');
@@ -67,6 +68,34 @@ class Main extends CI_Controller {
 		$this->data['c_po'] = 'active';
 		$this->load->view('includes/template',$this->data);
 	}
+
+	////////////////////////// Stock Start //////////////////////
+
+	public function stock(){
+		
+		$this->data['main_content'] = 'stock';
+		$this->data['stock'] = 'active';
+		$this->load->view('includes/template',$this->data);
+	}
+	public function update_stock(){
+		$this->load->model('stock');
+		$check = $this->input->post('get_stock_desc');
+		if($check >= 0 && isset($check)){
+			if($this->stock->get_list()){
+			}
+		}
+		
+		if($this->stock->get_list()){
+			$this->data['item_list'] = $this->stock->get_list();
+		}else{
+			$this->data['item_list'] = 'No Items';
+		}
+		$this->data['main_content'] = 'update_stock';
+		$this->data['stock'] = 'active';
+		$this->load->view('includes/template',$this->data);
+	}
+
+	///////////////////////// Stock End /////////////////////////
 }
 
 /* End of file main.php */

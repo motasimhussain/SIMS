@@ -47,6 +47,17 @@
                                 <li><a href="<?php echo base_url(); ?>index.php/main/add_supplier"><i class="fa fa-angle-double-right"></i> Add Supplier</a></li>
                             </ul>
                         </li>
+                        <li class="treeview <?php echo $stock; ?>">
+                            <a href="#">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <span>Stock</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url(); ?>index.php/main/stock"><i class="fa fa-angle-double-right"></i> Add Stock</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/main/update_stock"><i class="fa fa-angle-double-right"></i> Edit Stock</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
