@@ -14,7 +14,7 @@ class Validator extends CI_Controller {
 		
 		
 	}
-
+	///////////////////////// Validator Rules Start //////////////////////////
 	public function val_rules(){
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('prefix', 'Prefix', 'required');
@@ -30,9 +30,16 @@ class Validator extends CI_Controller {
 	public function stock_val(){
 		$this->form_validation->set_rules('item_name', 'Item Name', 'required');
 		//$this->form_validation->set_rules('item_code', 'Item Code', '');
-		$this->form_validation->set_rules('qty', 'Quantity', 'required');
-		$this->form_validation->set_rules('price', 'Price', 'numeric|required');
+		$this->form_validation->set_rules('qty', 'Quantity', 'numeric');
+		$this->form_validation->set_rules('price', 'Price', 'numeric');
 	}
+
+	public function supp_inv_val(){
+		$this->form_validation->set_rules('inv_num', 'Invoice #', 'numeric|required');
+		$this->form_validation->set_rules('qty', 'Quantity', 'numeric');
+		$this->form_validation->set_rules('price', 'Price', 'numeric');
+	}
+	///////////////////////// Validator Rules End //////////////////////////
 
 	public function add_customer(){
 		$this->val_rules();
@@ -49,29 +56,6 @@ class Validator extends CI_Controller {
 			$this->load->model('customer');
 			if($this->customer->add()){
 				redirect('main/add_customer');
-			}else{
-				echo "<h1>Oops Something went wrong</h1>";
-			}
-		}
-
-		
-	}
-
-	public function add_stock(){
-
-		$this->stock_val();
-		if ($this->form_validation->run() == FALSE)
-		{
-			$this->data['main_content'] = 'stock';
-			$this->data['stock'] = 'active';
-			$this->data['err'] = 1;
-			$this->load->view('includes/template',$this->data);
-		}
-		else
-		{
-			$this->load->model('stock');
-			if($this->stock->add()){
-				redirect('main/stock');
 			}else{
 				echo "<h1>Oops Something went wrong</h1>";
 			}
@@ -98,8 +82,48 @@ class Validator extends CI_Controller {
 				echo "<h1>Oops Something went wrong</h1>";
 			}
 		}
-
 		
+	}
+
+	public function add_stock(){
+
+		$this->stock_val();
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->data['main_content'] = 'stock';
+			$this->data['stock'] = 'active';
+			$this->data['err'] = 1;
+			$this->load->view('includes/template',$this->data);
+		}
+		else
+		{
+			$this->load->model('stock');
+			if($this->stock->add()){
+				redirect('main/stock');
+			}else{
+				echo "<h1>Oops Something went wrong</h1>";
+			}
+		}
+	}
+
+	public function supp_inv(){
+		$this->supp_inv_val();
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->data['main_content'] = 'supp_inv';
+			$this->data['inv'] = 'active';
+			$this->data['err'] = 1;
+			$this->load->view('includes/template',$this->data);
+		}
+		else
+		{
+			$this->load->model('supp_inv');
+			if($this->supp_inv->add()){
+				redirect('main/supp_inv');
+			}else{
+				echo "<h1>Oops Something went wrong</h1>";
+			}
+		}
 	}
 
 }

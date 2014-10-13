@@ -38,7 +38,7 @@
                         </li>
                         <li class="treeview <?php echo $acc; ?>">
                             <a href="#">
-                                <i class="fa fa-bar-chart-o"></i>
+                                <i class="fa fa-desktop"></i>
                                 <span>Accounts</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -54,8 +54,17 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url(); ?>index.php/main/stock"><i class="fa fa-angle-double-right"></i> Add Stock</a></li>
-                                <li><a href="<?php echo base_url(); ?>index.php/main/update_stock"><i class="fa fa-angle-double-right"></i> Edit Stock</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/main/stock"><i class="fa fa-angle-double-right"></i> Add Items</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo $inv; ?>">
+                            <a href="#">
+                                <i class="fa fa-building-o"></i>
+                                <span>Invoice</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url(); ?>index.php/main/supp_inv"><i class="fa fa-angle-double-right"></i> Add Invoice</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -13,6 +13,7 @@ class Main extends CI_Controller {
 		$this->data['c_po'] = "";
 		$this->data['acc'] = "";
 		$this->data['stock'] = "";
+		$this->data['inv'] = "";
 
 		
 		$logged_in = $this->session->userdata('isLoggedIn');
@@ -47,6 +48,11 @@ class Main extends CI_Controller {
 		$this->load->view('includes/template',$this->data);
 	}
 
+	public function print_po(){
+		$this->data['main_content'] = 'print_po';
+		$this->data['c_po'] = 'active';
+		$this->load->view('includes/template',$this->data);
+	}
 	/////////////////// Accounts Start ///////////////////////
 	public function add_customer(){
 		$this->data['main_content'] = 'add_customer';
@@ -63,11 +69,7 @@ class Main extends CI_Controller {
 
 	/////////////////// Accounts End ///////////////////////
 
-	public function print_po(){
-		$this->data['main_content'] = 'print_po';
-		$this->data['c_po'] = 'active';
-		$this->load->view('includes/template',$this->data);
-	}
+	
 
 	////////////////////////// Stock Start //////////////////////
 
@@ -77,25 +79,42 @@ class Main extends CI_Controller {
 		$this->data['stock'] = 'active';
 		$this->load->view('includes/template',$this->data);
 	}
-	public function update_stock(){
-		$this->load->model('stock');
-		$check = $this->input->post('get_stock_desc');
-		if($check >= 0 && isset($check)){
-			if($this->stock->get_list()){
-			}
+
+	///////////////////////// Stock End /////////////////////////
+
+	///////////////////////// Invoice Start //////////////////////
+	public function supp_inv(){
+		$this->load->model('supplier');
+		if($this->supplier->get_list()){
+			$this->data['supp_list'] = $this->supplier->get_list();
+		}else{
+			$this->data['supp_list'] = 'No Suppliers';
 		}
-		
+		$this->load->model('stock');
 		if($this->stock->get_list()){
 			$this->data['item_list'] = $this->stock->get_list();
 		}else{
-			$this->data['item_list'] = 'No Items';
+			$this->data['item_list'] = 'No Suppliers';
 		}
-		$this->data['main_content'] = 'update_stock';
-		$this->data['stock'] = 'active';
+		$this->load->model('supp_inv');
+		if($this->session->userdata('is_new_inv') == 0){
+			$this->data['item_info'] = $this->supp_inv->get_info();
+		}
+		$this->data['main_content'] = 'supp_inv';
+		$this->data['inv'] = 'active';
 		$this->load->view('includes/template',$this->data);
 	}
 
-	///////////////////////// Stock End /////////////////////////
+	public function new_inv(){
+		$array = array(
+			'is_new_inv' => '1'
+		);
+		
+		$this->session->set_userdata( $array );
+		redirect('main/supp_inv');
+	}
+	///////////////////////// Invoice End //////////////////////
+
 }
 
 /* End of file main.php */

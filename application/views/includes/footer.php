@@ -11,8 +11,6 @@
         <script src="<?=base_url() ?>js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
         <!-- daterangepicker -->
         <script src="<?=base_url() ?>js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
-        <!-- datepicker -->
-        <script src="<?=base_url() ?>js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src="<?=base_url() ?>js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
 

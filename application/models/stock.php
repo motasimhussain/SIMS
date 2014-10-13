@@ -26,6 +26,18 @@ class Stock extends CI_Model {
 		}
 		return $data;
 	}
+
+	public function get_item_desc($id){
+		$this->db->where('id',$id);
+		$query = $this->db->get('stock');
+
+		if ($query->num_rows() > 0) {
+			$data = $query->result();
+			return $data;
+		}else{
+			return false;
+		}
+	}
 }
 
 /* End of file stock.php */
