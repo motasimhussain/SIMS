@@ -80,9 +80,42 @@ class Main extends CI_Controller {
 		$this->load->view('includes/template',$this->data);
 	}
 
+	public function stock_list()
+	{
+		$this->load->model('stock');
+		if($this->stock->get_list()){
+			$this->data['stock_list'] = $this->stock->get_list();
+		}else{
+			$this->data['stock_list'] = 'No Invoices';
+		}
+		$this->data['main_content'] = 'stock_list';
+		$this->data['stock'] = 'active';
+		$this->load->view('includes/template',$this->data);
+	}
+
+	public function stock_det($id,$action){
+		$this->load->model('stock');
+		if ($action == "delete") {
+
+		if($this->stock->del($id)){
+			redirect('main/stock_list');
+		}
+		}
+		if($this->stock->get_item_desc($id)){
+			$this->data['detail'] = $this->stock->get_item_desc($id);
+			$this->data['id'] = $id;
+		}else{
+			$this->data['detail'] = 'no content';
+		}
+		$this->data['action'] = $action;
+		$this->data['stock'] = ' active';
+		$this->data['main_content'] = 'stock_det';
+		$this->load->view('includes/template', $this->data);
+	}
+
 	///////////////////////// Stock End /////////////////////////
 
-	///////////////////////// Invoice Start //////////////////////
+	///////////////////////// Supplier Invoice Start //////////////////////
 	public function supp_inv(){
 		$this->load->model('supplier');
 		if($this->supplier->get_list()){
@@ -113,7 +146,41 @@ class Main extends CI_Controller {
 		$this->session->set_userdata( $array );
 		redirect('main/supp_inv');
 	}
-	///////////////////////// Invoice End //////////////////////
+
+	public function supp_inv_list()
+	{
+		$this->load->model('supp_inv');
+		if($this->supp_inv->get_list()){
+			$this->data['inv_list'] = $this->supp_inv->get_list();
+		}else{
+			$this->data['inv_list'] = 'No Invoices';
+		}
+		$this->data['main_content'] = 'supp_inv_list';
+		$this->data['inv'] = 'active';
+		$this->load->view('includes/template',$this->data);
+	}
+
+	public function supp_inv_det($id,$action){
+		$this->load->model('supp_inv');
+		if ($action == "delete") {
+
+		if($this->supp_inv->del($id)){
+			redirect('main/supp_inv_list');
+		}
+		}
+		if($this->supp_inv->get_det_by_id($id)){
+			$this->data['detail'] = $this->supp_inv->get_det_by_id($id);
+			$this->data['id'] = $id;
+		}else{
+			$this->data['detail'] = 'no content';
+		}
+		$this->data['action'] = $action;
+		$this->data['inv'] = ' active';
+		$this->data['main_content'] = 'supp_inv_det';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	///////////////////////// Supplier Invoice End //////////////////////
 
 }
 

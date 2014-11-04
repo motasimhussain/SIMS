@@ -16,7 +16,7 @@
         <div class="box box-info">
             <div class="box-header">
                 <div class="box-tools">
-                    <a href="<?php echo base_url() ?>index.php/main/new_inv" class="btn btn-success pull-right">New</a>
+                    <a href="<?php echo base_url() ?>index.php/main/new_inv" class="btn btn-success btn-flat pull-right">New</a>
                 </div>
             </div>
 

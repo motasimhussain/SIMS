@@ -34,7 +34,21 @@ class Validator extends CI_Controller {
 		$this->form_validation->set_rules('price', 'Price', 'numeric');
 	}
 
+	public function edit_stock_val(){
+		$this->form_validation->set_rules('item_name', 'Item Name', 'required');
+		//$this->form_validation->set_rules('item_code', 'Item Code', '');
+		$this->form_validation->set_rules('qty', 'Quantity', 'numeric');
+		$this->form_validation->set_rules('price', 'Price', 'numeric');
+	}
+
 	public function supp_inv_val(){
+		$this->form_validation->set_rules('inv_num', 'Invoice #', 'numeric|required');
+		$this->form_validation->set_rules('qty', 'Quantity', 'numeric');
+		$this->form_validation->set_rules('price', 'Price', 'numeric');
+	}
+	public function supp_inv_edit_val(){
+		$this->form_validation->set_rules('item_id', 'Item ID', 'numeric|required');
+		$this->form_validation->set_rules('supp_id', 'Supplier ID', 'numeric|required');
 		$this->form_validation->set_rules('inv_num', 'Invoice #', 'numeric|required');
 		$this->form_validation->set_rules('qty', 'Quantity', 'numeric');
 		$this->form_validation->set_rules('price', 'Price', 'numeric');
@@ -120,6 +134,41 @@ class Validator extends CI_Controller {
 			$this->load->model('supp_inv');
 			if($this->supp_inv->add()){
 				redirect('main/supp_inv');
+			}else{
+				echo "<h1>Oops Something went wrong</h1>";
+			}
+		}
+	}
+	public function edit_supp_inv(){
+		$this->supp_inv_edit_val();
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->data['main_content'] = 'supp_inv';
+			$this->load->view('includes/err');
+		}
+		else
+		{
+			$this->load->model('supp_inv');
+			if($this->supp_inv->update_data()){
+				redirect('main/supp_inv_list');
+			}else{
+				echo "<h1>Oops Something went wrong</h1>";
+			}
+		}
+	}
+
+	public function edit_stock(){
+		$this->edit_stock_val();
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->data['main_content'] = 'supp_inv';
+			$this->load->view('includes/err');
+		}
+		else
+		{
+			$this->load->model('stock');
+			if($this->stock->update_data()){
+				redirect('main/stock_list');
 			}else{
 				echo "<h1>Oops Something went wrong</h1>";
 			}

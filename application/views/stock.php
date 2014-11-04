@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="item_name">Item Name</label>  
                             <div class="col-md-4">
-                                <input id="item_name" name="item_name" placeholder="Item Name" value="<?php echo set_value('item_name'); ?>" class="form-control input-md" type="text" required>
+                                <input id="item_name" name="item_name" placeholder="Item Name" value="<?php echo set_value('item_name'); ?>" class="form-control input-md" type="text" required autofocus>
                             </div>
                         </div>
                         <div class="form-group">

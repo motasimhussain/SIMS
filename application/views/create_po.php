@@ -52,7 +52,7 @@
                         <div class="form-group">
                             <label class=" control-label" for="textinput">Date:</label>
                             <div class="" >
-                                <input id="pickdate" name="date" readonly="" class="form-control text-center" type="text" value="">
+                                <input id="reservation" name="date" readonly="" class="form-control text-center" type="text" value="">
                             </div>
                         </div>
                     </div>

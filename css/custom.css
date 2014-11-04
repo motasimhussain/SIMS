@@ -6,3 +6,7 @@
 	padding-left: 2px;
 	padding-right: 2px;
 }
+
+.box .box-header a {
+color: white;
+}
