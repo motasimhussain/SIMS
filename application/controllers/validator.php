@@ -53,6 +53,10 @@ class Validator extends CI_Controller {
 		$this->form_validation->set_rules('qty', 'Quantity', 'numeric');
 		$this->form_validation->set_rules('price', 'Price', 'numeric');
 	}
+	public function add_po_in_val(){
+		$this->form_validation->set_rules('pod_num', 'PO Detail #', 'numeric|required');
+		$this->form_validation->set_rules('po_date', 'Date', 'required');
+	}
 	///////////////////////// Validator Rules End //////////////////////////
 
 	public function add_customer(){
@@ -97,6 +101,26 @@ class Validator extends CI_Controller {
 			}
 		}
 		
+	}
+
+	public function add_po_in(){
+		$this->add_po_in_val();
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->data['main_content'] = 'create_po';
+			$this->data['create_po'] = 'active';
+			$this->data['err'] = 1;
+			$this->load->view('includes/template',$this->data);
+		}
+		else
+		{
+			$this->load->model('po_in');
+			if($this->po_in->add()){
+				redirect('main/create_po');
+			}else{
+				echo "<h1>Oops Something went wrong</h1>";
+			}
+		}
 	}
 
 	public function add_stock(){

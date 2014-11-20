@@ -43,9 +43,29 @@ class Main extends CI_Controller {
 		}else{
 			$this->data['cust_list'] = 'No Customers';
 		}
+
+		$this->load->model('stock');
+		if($this->stock->get_list()){
+			$this->data['item_lst'] = $this->stock->get_list();
+		}
+		$this->load->model('po_in');
+
+		if($this->session->userdata('is_new_po') == 0){
+			$this->data['po_info'] = $this->po_in->get_info();
+		}
+
 		$this->data['main_content'] = 'create_po';
 		$this->data['c_po'] = 'active';
 		$this->load->view('includes/template',$this->data);
+	}
+
+	public function new_po(){
+		$array = array(
+			'is_new_po' => 1
+		);
+		
+		$this->session->set_userdata( $array );
+		redirect('main/create_po');
 	}
 
 	public function print_po(){
@@ -86,7 +106,7 @@ class Main extends CI_Controller {
 		if($this->stock->get_list()){
 			$this->data['stock_list'] = $this->stock->get_list();
 		}else{
-			$this->data['stock_list'] = 'No Invoices';
+			$this->data['stock_list'] = 'No Entry';
 		}
 		$this->data['main_content'] = 'stock_list';
 		$this->data['stock'] = 'active';

@@ -36,7 +36,7 @@ class Supp_inv extends CI_Model {
 
 		if($query){
 			$array = array(
-				'is_new_inv' => '0'
+				'is_new_inv' => 0
 			);
 			$this->session->set_userdata( $array );
 

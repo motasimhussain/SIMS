@@ -6,7 +6,10 @@ class Auth extends CI_Controller {
 	{
 		parent::__construct();
 		//Do one time initializations here
-		$data = array('is_new_inv' => 1);
+		$data = array(
+			'is_new_inv' => 1,
+			'is_new_po' => 1
+		);
 		$this->session->set_userdata( $data );
 	}
 
