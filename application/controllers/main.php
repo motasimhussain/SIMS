@@ -73,9 +73,27 @@ class Main extends CI_Controller {
 		$this->data['c_po'] = 'active';
 		$this->load->view('includes/template',$this->data);
 	}
+
+	public function create_dc(){
+		$this->data['main_content'] = 'd_chal';
+		$this->data['c_po'] = 'active';
+		$this->load->view('includes/template',$this->data);
+	}
 	/////////////////// Accounts Start ///////////////////////
 	public function add_customer(){
 		$this->data['main_content'] = 'add_customer';
+		$this->data['acc'] = 'active';
+		$this->load->view('includes/template',$this->data);
+	}
+
+	public function add_customer_address(){
+		$this->load->model('customer');
+		if($this->customer->get_list()){
+			$this->data['cust_list'] = $this->customer->get_list();
+		}else{
+			$this->data['cust_list'] = 'No Customers';
+		}
+		$this->data['main_content'] = 'add_cust_address';
 		$this->data['acc'] = 'active';
 		$this->load->view('includes/template',$this->data);
 	}

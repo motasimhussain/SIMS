@@ -78,8 +78,15 @@ class Validator extends CI_Controller {
 				echo "<h1>Oops Something went wrong</h1>";
 			}
 		}
+	}
 
-		
+	public function c_address(){
+		$this->load->model('customer');
+		if($this->customer->add()){
+			redirect('main/add_customer');
+		}else{
+			echo "<h1>Oops Something went wrong</h1>";
+		}
 	}
 
 	public function add_supplier(){

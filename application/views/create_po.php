@@ -53,7 +53,7 @@
                 <fieldset>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label class="control-label" for="po_num_in">PO#:</label>
+                            <label class="control-label" for="po_num_in">Customer PO#:</label>
                             <div class="">
                                 <input type="text" class="form-control text-center" id="po_num_in" name="po_num_in" value="<?php if(isset($po_num_in)) echo $po_num_in; ?>">
                             </div>
@@ -100,7 +100,7 @@
                             <th>U/Price</th>
                             <th>TTL/Amount</th>
                             <th>Supplier</th>
-                            <th>PO#</th>
+                            <th>Supp PO#</th>
                             <th>LC#</th>
                             <th>GRN#</th>
                             <th>DC#</th>
@@ -171,7 +171,7 @@
                             <td class=""><input type="text" class="form-control" id="po_num_out" name="po_num_out"></td>
                             <td class=""><a href="">Create</a></td>
                             <td class=""><a href="">Create</a></td>
-                            <td class=""><a href="">Create</a></td>
+                            <td class=""><a href="<?php echo base_url(); ?>index.php/main/create_dc">Create</a></td>
                             <td class=""><a href="">Create</a></td>
                             <td class=""><a href="#" class="glyphicon glyphicon-plus"></a></td>
                             <td class=""><a href="#" class="glyphicon glyphicon-remove"></a></td>
