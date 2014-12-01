@@ -38,11 +38,17 @@
                     <?php endif ?>
                     
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label class="control-label" for="pod_num">PO Detail#:</label>
                         <div class="form-group">
-                            <label class="control-label" for="pod_num">PO Detail#:</label>
-                            <div class="">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <select class="btn btn-default" name="prefix">
+                                        <option>KHI</option>
+                                        <option>LHR</option>
+                                    </select>
+                                </span>
                                 <input type="text" class="form-control text-center" id="pod_num" name="pod_num" value="<?php if(isset($pod_num)) echo $pod_num; ?>" required>
-                            </div>
+                            </div><!-- /input-group -->
                         </div>
                     </div>
 

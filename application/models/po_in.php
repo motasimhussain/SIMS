@@ -31,9 +31,11 @@ class Po_in extends CI_Model {
 
 			list($date_1, $date_2) = explode(" - ", $parse_date);
 
+			$concat = $this->input->post("prefix")."-".$this->input->post('pod_num');
 
 			$data = array(
 				'pod_num' => $this->input->post('pod_num'),
+				'pod_prefix' => $concat,
 				'po_num_in' => $this->input->post('po_num_in'),
 				'date_recieved' => $date_1,
 				'due_date' => $date_2,
